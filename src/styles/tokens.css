@@ -1,0 +1,56 @@
+:root {
+  /* ================================
+     COLORS
+     ================================ */
+
+  --color-bone: #f1ede4;
+  --color-paper: #faf8f3;
+  --color-carbon: #171614;
+  --color-espresso: #41271d;
+  --color-copper: #b9683b;
+  --color-blue: #536d80;
+  --color-ash: #8a857d;
+
+  /* ================================
+     TYPOGRAPHY
+     ================================ */
+
+  --font-display: "Instrument Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* ================================
+     BORDERS / SHAPE
+     ================================ */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --border-thin: 1px;
+
+  /* ================================
+     SPACING
+     ================================ */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ================================
+     LAYOUT
+     ================================ */
+
+  --page-padding: clamp(20px, 4vw, 64px);
+
+  /* ================================
+     MOTION
+     ================================ */
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
