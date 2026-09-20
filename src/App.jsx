@@ -1,17 +1,39 @@
+import "./styles/research.css";
+
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import RoastLab from "./sections/RoastLab";
 
+
+import {
+  LabOverview,
+  CollectionSection,
+  ProcessSection,
+  LabNotesSection,
+  SiteFooter,
+} from "./sections/ResearchSections";
+
 function App() {
   return (
-    <div className="app">
+    <>
       <Navbar />
 
       <main>
         <Hero />
+
+        <LabOverview />
+
         <RoastLab />
+
+        <CollectionSection />
+
+        <ProcessSection />
+
+        <LabNotesSection />
+
+        <SiteFooter />
       </main>
-    </div>
+    </>
   );
 }
 

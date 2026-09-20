@@ -578,3 +578,591 @@
   font-weight: 500;
   letter-spacing: 0.01em;
 }
+/* ========================================
+   PROFILE RESULT
+   ======================================== */
+
+.profile-result {
+  position: relative;
+  transition: none;
+
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding:
+    clamp(80px, 10vw, 140px)
+    var(--page-padding);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.profile-result__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.profile-result__eyebrow,
+.profile-result__id,
+.profile-result__specs span,
+.profile-result__notes > span,
+.profile-result__match > span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-result__eyebrow {
+  margin: 0;
+
+  color: var(--color-blue);
+}
+
+.profile-result__id {
+  color: var(--color-ash);
+}
+
+.profile-result__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.6fr);
+
+  gap: clamp(32px, 8vw, 120px);
+
+  align-items: end;
+}
+
+.profile-result__headline > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--color-copper);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.profile-result__headline h2 {
+  margin: 0;
+
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+.profile-result__description p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: rgba(23, 22, 20, 0.67);
+
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.5;
+}
+
+.profile-result__specs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  border-top: 1px solid rgba(23, 22, 20, 0.15);
+  border-bottom: 1px solid rgba(23, 22, 20, 0.15);
+}
+
+.profile-result__specs > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  padding: 18px 16px;
+
+  border-right: 1px solid rgba(23, 22, 20, 0.12);
+}
+
+.profile-result__specs > div:first-child {
+  padding-left: 0;
+}
+
+.profile-result__specs > div:last-child {
+  border-right: 0;
+}
+
+.profile-result__specs span {
+  color: var(--color-ash);
+}
+
+.profile-result__specs strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.profile-result__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 48px;
+
+  padding-top: 20px;
+}
+
+.profile-result__notes > span,
+.profile-result__match > span {
+  color: var(--color-ash);
+}
+
+.profile-result__notes > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 14px;
+}
+
+.profile-result__notes > div span {
+  padding: 8px 10px;
+
+  border: 1px solid rgba(83, 109, 128, 0.35);
+
+  color: var(--color-blue);
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.profile-result__match {
+  justify-self: end;
+
+  width: min(100%, 360px);
+}
+
+.profile-result__match strong {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.profile-result__match p {
+  margin: 8px 0 0;
+
+  color: rgba(23, 22, 20, 0.62);
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.profile-result__reset {
+  width: fit-content;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid var(--color-carbon);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .profile-result__main {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-result__specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-result__specs > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .profile-result__specs > div:nth-child(-n + 3) {
+    border-bottom: 1px solid rgba(23, 22, 20, 0.12);
+  }
+
+  .profile-result__bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-result__match {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-result {
+    min-height: auto;
+
+    gap: 48px;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .profile-result__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-result__headline h2 {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+  }
+
+  .profile-result__specs {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-result__specs > div {
+    padding: 14px 0;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(23, 22, 20, 0.12);
+  }
+
+  .profile-result__specs > div:last-child {
+    border-bottom: 0;
+  }
+}
+.roast-lab__stage {
+  position: relative;
+}
+
+.roast-lab__inner {
+  transition:
+    opacity 500ms var(--ease-standard),
+    transform 700ms var(--ease-standard);
+}
+
+.roast-lab__stage--locked .roast-lab__inner {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+
+.roast-lab__stage--locked .profile-result {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.profile-result {
+  position: absolute;
+  inset: 0;
+
+  transition: none;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 10;
+
+  background: var(--color-cream);
+}
+.roast-lab__lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 32px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid var(--color-carbon);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.roast-lab__lock span {
+  color: var(--color-copper);
+
+  transition: transform 300ms var(--ease-standard);
+}
+
+.roast-lab__lock:hover span {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   ROAST LAB — FINAL POLISH
+   ========================================================= */
+
+.roast-lab {
+  position: relative;
+  isolation: isolate;
+}
+
+.roast-lab__stage {
+  overflow: clip;
+  isolation: isolate;
+}
+
+.roast-lab__inner,
+.profile-result {
+  will-change: opacity, transform;
+}
+
+/* ---------------------------------------------------------
+   Lock / recalibration micro-interactions
+   --------------------------------------------------------- */
+
+.roast-lab__lock,
+.profile-result__reset {
+  position: relative;
+
+  transition:
+    color 250ms var(--ease-standard),
+    border-color 250ms var(--ease-standard),
+    transform 250ms var(--ease-standard);
+}
+
+.roast-lab__lock:hover,
+.profile-result__reset:hover {
+  transform: translateY(-2px);
+}
+
+.roast-lab__lock:active,
+.profile-result__reset:active {
+  transform: translateY(0);
+}
+
+.roast-lab__lock:focus-visible,
+.profile-result__reset:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 7px;
+}
+
+/* ---------------------------------------------------------
+   Slider interaction
+   --------------------------------------------------------- */
+
+.roast-lab input[type="range"] {
+  cursor: ew-resize;
+}
+
+.roast-lab input[type="range"]:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 6px;
+}
+
+/* ---------------------------------------------------------
+   Readout micro-interactions
+   --------------------------------------------------------- */
+
+.roast-lab__technical-profile > div {
+  transition:
+    transform 220ms var(--ease-standard),
+    border-color 220ms var(--ease-standard);
+}
+
+.roast-lab__technical-profile > div:hover {
+  transform: translateY(-2px);
+}
+
+.roast-lab__notes span {
+  transition:
+    background-color 220ms var(--ease-standard),
+    color 220ms var(--ease-standard),
+    border-color 220ms var(--ease-standard);
+}
+
+.roast-lab__notes span:hover {
+  border-color: rgba(83, 109, 128, 0.65);
+  background: rgba(83, 109, 128, 0.06);
+}
+
+/* ---------------------------------------------------------
+   Profile result polish
+   --------------------------------------------------------- */
+
+.profile-result__specs > div {
+  transition:
+    background-color 220ms var(--ease-standard),
+    transform 220ms var(--ease-standard);
+}
+
+.profile-result__specs > div:hover {
+  background: rgba(23, 22, 20, 0.025);
+}
+
+.profile-result__notes > div span {
+  transition:
+    background-color 220ms var(--ease-standard),
+    color 220ms var(--ease-standard),
+    border-color 220ms var(--ease-standard);
+}
+
+.profile-result__notes > div span:hover {
+  background: rgba(83, 109, 128, 0.07);
+  border-color: rgba(83, 109, 128, 0.65);
+}
+
+/* ---------------------------------------------------------
+   Responsive — tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .roast-lab__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(48px, 8vw, 80px);
+  }
+
+  .roast-lab__visual {
+    order: -1;
+
+    min-height: clamp(
+      380px,
+      58vw,
+      560px
+    );
+  }
+
+  .roast-lab__controls {
+    width: min(100%, 760px);
+  }
+
+  .profile-result__main {
+    gap: 40px;
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive — mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .roast-lab__inner {
+    gap: 42px;
+  }
+
+  .roast-lab__visual {
+    min-height: 360px;
+  }
+
+  .roast-lab__heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .roast-lab__profile-id {
+    align-self: flex-start;
+  }
+
+  .roast-lab__technical-profile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roast-lab__lock {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-result {
+    gap: 40px;
+
+    padding:
+      64px
+      max(
+        var(--page-padding),
+        20px
+      );
+  }
+
+  .profile-result__headline h2 {
+    font-size: clamp(
+      3.2rem,
+      15vw,
+      5rem
+    );
+  }
+
+  .profile-result__bottom {
+    gap: 34px;
+  }
+
+  .profile-result__match {
+    width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive — small phones
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .roast-lab__visual {
+    min-height: 310px;
+  }
+
+  .roast-lab__technical-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .roast-lab__readout {
+    padding-top: 20px;
+  }
+
+  .profile-result {
+    padding:
+      52px
+      20px;
+  }
+
+  .profile-result__header {
+    gap: 8px;
+  }
+
+  .profile-result__headline h2 {
+    font-size: clamp(
+      2.9rem,
+      15.5vw,
+      4.3rem
+    );
+  }
+
+  .profile-result__description p {
+    font-size: 0.95rem;
+  }
+
+  .profile-result__specs > div {
+    padding: 13px 0;
+  }
+}
+
+/* ---------------------------------------------------------
+   Reduced motion accessibility
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .roast-lab *,
+  .profile-result * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

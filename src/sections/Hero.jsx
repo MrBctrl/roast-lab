@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 
 import BeanVisual from "../components/BeanVisual";
 import { createHeroAnimation } from "../animations/heroAnimation";
+import HeroFieldRail from "../components/HeroFieldRail";
 
 function Hero() {
   const heroRef = useRef(null);
@@ -34,6 +35,8 @@ function Hero() {
         <a href="#lab" className="hero__button">
           ENTER THE LAB <span aria-hidden="true">→</span>
         </a>
+
+        <HeroFieldRail />
       </div>
 
       <div className="hero__visual">
